@@ -21,13 +21,15 @@ public class Setting_StepDefs {
 
 
     }
+
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_module(String string) {
 
         settingPages.files.click();
 
     }
-    @When("user clicks Settings on the left bottom corner")
+}
+   /* @When("user clicks Settings on the left bottom corner")
     public void user_clicks_settings_on_the_left_bottom_corner() {
 
         settingPages.settings.click();
@@ -58,3 +60,4 @@ public class Setting_StepDefs {
 
 
 }
+*/
