@@ -23,4 +23,28 @@ public class FileModulePage extends BasePage {
     @FindBy(xpath = " //*[@id=\"app-navigation\"]/ul/li[7]/a")
     public WebElement deletedFolder;
 
+
+
+    //Veronica's locators
+
+    @FindBy(css = "#appmenu li[data-id='files'] svg")
+    public WebElement tabElementSvg;
+
+    @FindBy(css = ".icon-add")
+    public WebElement addIconSpan;
+
+    @FindBy(xpath = "//a[@class='menuitem']")
+    public WebElement iconNewFolder;
+
+    @FindBy(id = "view13-input-folder")
+    public WebElement inputFolderName;
+
+    @FindBy(xpath = "//span[@class='innernametext']")
+    public List<WebElement> listOfAllFiles;
+
+    @FindBy(xpath = "//form[@class='filenameform']/input[2]\n")
+    public WebElement inputSubmitButton;
+
+
+
 }
