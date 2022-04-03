@@ -1,34 +1,39 @@
 package com.tryCloud.step_definitions;
 
-import com.tryCloud.pages.SettingPages;
+import com.tryCloud.pages.SettingPage;
 import com.tryCloud.utilities.ConfigurationReader;
 import com.tryCloud.utilities.Driver;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.interactions.Actions;
 
 public class Setting_StepDefs {
 
-    SettingPages settingPages = new SettingPages();
+    SettingPage settingPage = new SettingPage();
 
     @Given("user on the dashboard page")
     public void user_on_the_dashboard_page() {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-        settingPages.usernameInput.sendKeys(ConfigurationReader.getProperty("username"));
-        settingPages.passwordInput.sendKeys(ConfigurationReader.getProperty("password"));
-        settingPages.login.click();
-
+        settingPage.usernameInput.sendKeys(ConfigurationReader.getProperty("username"));
+        settingPage.passwordInput.sendKeys(ConfigurationReader.getProperty("password"));
+        settingPage.login.click();
 
     }
 
     @When("the user clicks the {string} module")
     public void the_user_clicks_the_module(String string) {
-
-        settingPages.files.click();
-
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(settingPage.modules.get(1)).perform();
+        for (int i = 0; i < settingPage.modulesText.size(); i++) {
+            if (settingPage.modulesText.get(i).getText().trim().equals(string.trim())) {
+                settingPage.modules.get(i).click();
+            }
+        }
     }
+
 }
+
    /* @When("user clicks Settings on the left bottom corner")
     public void user_clicks_settings_on_the_left_bottom_corner() {
 
