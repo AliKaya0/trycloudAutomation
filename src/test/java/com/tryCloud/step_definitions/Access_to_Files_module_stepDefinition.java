@@ -71,7 +71,7 @@ public class Access_to_Files_module_stepDefinition {
         }
 
         String ActualTitle      = Driver.getDriver().getTitle();
-        String ExpectedTitle    = "Files - Trycloud QA";
+        String ExpectedTitle    = "Files - Trycloud";
 
         Assert.assertEquals(ActualTitle, ExpectedTitle);
 
