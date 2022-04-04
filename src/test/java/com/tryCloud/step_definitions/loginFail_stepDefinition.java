@@ -15,11 +15,11 @@ import java.util.Map;
 public class loginFail_stepDefinition {
     LoginFailPage myNewObject= new LoginFailPage();
 
-    @Given("user on the login page")
+   /* @Given("user on the login page")
     public void user_on_the_login_page() {
 
-    }
-    //
+    }*/
+
 
     @When("user enter invalid {string} and {string}")
     public void user_enter_invalid_and(String login,String password) {
