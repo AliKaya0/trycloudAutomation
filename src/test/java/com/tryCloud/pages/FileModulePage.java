@@ -24,7 +24,6 @@ public class FileModulePage extends BasePage {
     public WebElement deletedFolder;
 
 
-
     //Veronica's locators
 
     @FindBy(css = "#appmenu li[data-id='files'] svg")
@@ -45,6 +44,14 @@ public class FileModulePage extends BasePage {
     @FindBy(xpath = "//form[@class='filenameform']/input[2]\n")
     public WebElement inputSubmitButton;
 
+    @FindBy(xpath = "//span[.='testFolder']/..//span[.='Actions']/..")
+    public WebElement testFolderOfActionButton;
+
+    @FindBy(xpath = "//a[.='Deleted files']")
+    public WebElement deletedFiles;
+
+    @FindBy(xpath = "(//span[.='Delete permanently']/..)[2]")
+    public WebElement deletePermanently;
 
 
 }
