@@ -2,6 +2,7 @@ package com.tryCloud.step_definitions;
 
 import com.tryCloud.pages.FileModulePage;
 import com.tryCloud.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -9,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import javax.swing.text.Utilities;
 
 public class ManageFolder_stepDefinitions {
 
@@ -48,6 +51,25 @@ public class ManageFolder_stepDefinitions {
                 Assert.assertTrue(myElement.isDisplayed());
             }
         }
+    }
+
+    @Then("user clicks on actions menu button of created folder")
+    public void user_clicks_on_actions_menu_button_of_created_folder() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[.='testFolder']/..//span[.='Actions']/..")));
+        userDashboardPage.testFolderOfActionButton.click();
+
+    }
+
+    @And("user delete created folder permanently")
+    public void user_delete_created_folder_permanently() {
+
+        userDashboardPage.deletedFiles.click();
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[.='testFolder']/..//span[.='Actions']/..")));
+        userDashboardPage.testFolderOfActionButton.click();
+        userDashboardPage.deletePermanently.click();
+
     }
 
 
