@@ -19,6 +19,7 @@ public class loginFail_stepDefinition {
     public void user_on_the_login_page() {
 
     }
+    //
 
     @When("user enter invalid {string} and {string}")
     public void user_enter_invalid_and(String login,String password) {

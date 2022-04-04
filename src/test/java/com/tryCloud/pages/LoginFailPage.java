@@ -19,7 +19,6 @@ public class LoginFailPage extends BasePage{
     @FindBy(css="[class*='warning']")
     public WebElement message;
 
-//nnnn
 
 
 
