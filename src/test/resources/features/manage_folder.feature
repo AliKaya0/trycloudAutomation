@@ -1,6 +1,5 @@
 Feature: As a user, I should be able to remove files from the favorites and upload a file directly
   Agile Story: As a user, I should be able to manage folders.
-  @wip
 Scenario: Verify users can add the folder
 Given user on the dashboard page
 When the user clicks the "Files" module
