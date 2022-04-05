@@ -1,5 +1,6 @@
 package com.tryCloud.pages;
 
+import io.cucumber.java.de.Wenn;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -7,14 +8,24 @@ import java.util.List;
 
 public class FileModulePage extends BasePage {
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    String fileName;
+    String deletedFileXpath="//span[contains(text(),'"+fileName+"')]";
 
     @FindBy(xpath = "//*[@id=\"appmenu\"]/li[2]")
     public WebElement filesButton;
 
-    @FindBy(xpath = "//tbody[@id='fileList']/tr[2]/td[2]//a[2]")
+    @FindBy(xpath = "//*[@id=\"fileList\"]/tr[1]/td[2]/a/span[3]/a[2]/span[1]")
     public WebElement actionButton;
 
-    @FindBy(xpath = "//span[text()='Delete file']/..")
+    @FindBy(xpath = "//*[@id=\"fileList\"]/tr[1]/td[2]/div/ul/li[8]/a")
     public WebElement deleteButton;
 
     @FindBy(xpath = "//div[@class='fileActionsMenu popovermenu bubble open menu']/ul//li//a/*/following-sibling::span")
@@ -53,5 +64,22 @@ public class FileModulePage extends BasePage {
     @FindBy(xpath = "(//span[.='Delete permanently']/..)[2]")
     public WebElement deletePermanently;
 
+
+    @FindBy(xpath = "//a[@class='action action-restore permanent']")
+    public WebElement restoreButton;
+
+
+
+    @FindBy(xpath = "//span[@class='innernametext'][1]")
+    public WebElement firstFileName;
+
+    @FindBy(xpath = "//*[@id=\"appmenu\"]/li[7]/a")
+    public WebElement contactsModule;
+
+    @FindBy(xpath = "//*[@id=\"fileList\"]/tr[1]/td[2]/a/span[1]/span")
+    public WebElement firstFileToBeDeleted;
+
+    @FindBy(xpath = "//div[3]/div[2]/div[13]/table/tbody/tr/td[2]/a/span[1]/span[1]")
+    public WebElement deletedFile;
 
 }
