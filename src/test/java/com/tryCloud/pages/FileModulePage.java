@@ -23,6 +23,11 @@ public class FileModulePage extends BasePage {
     @FindBy(xpath = " //*[@id=\"app-navigation\"]/ul/li[7]/a")
     public WebElement deletedFolder;
 
+  @FindBy(xpath ="//*[@id=\"appmenu\"]/li[7]/a" )
+  public WebElement contactsModule;
+
+
+
 
     //Veronica's locators
 
